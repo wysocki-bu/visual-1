@@ -36,8 +36,8 @@ st.info(
 try:
     with open(__file__, "r", encoding="utf-8") as f:
        source_code = f.read()
-       st.code(source_code, language="python", line_numbers=True)
-    except Exception as e:
-       st.error(f"Could not read source file automatically: {e}")
+    st.code(source_code, language="python", line_numbers=True)
+except Exception as e:
+    st.error(f"Could not read source file automatically: {e}")
 
 
