@@ -19,6 +19,7 @@ def load_firms():
 firms = load_firms()
  
 st.title("Graph of Gross Margin Components")
+st.subheader("Example of interactive drag-and-select to display data from scatter plot.")
 st.caption("Drag a box or lasso over the points to list those firms.")
 fig = px.scatter(firms, x="COGS", y="Revenue", hover_name="firm")
 event = st.plotly_chart(fig, on_select="rerun", selection_mode=("box", "lasso"))
