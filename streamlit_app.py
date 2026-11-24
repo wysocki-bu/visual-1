@@ -28,3 +28,16 @@ if rows:
     st.dataframe(customers.iloc[rows], hide_index=True)
 else:
     st.info("Nothing selected yet.")
+
+st.info(
+        "Below is the Python code powering this visualization, read dynamically from Github Repository."
+)
+
+try:
+    with open(__file__, "r", encoding="utf-8") as f:
+       source_code = f.read()
+       st.code(source_code, language="python", line_numbers=True)
+    except Exception as e:
+       st.error(f"Could not read source file automatically: {e}")
+
+
